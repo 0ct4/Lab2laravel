@@ -92,9 +92,9 @@ mysqldump -u usuario -p nombre_base_de_datos > database/backups/backup_lab2.sql
 
 ## 🖼️ Resultado Visible
 
-![Capturas de pantalla del laboratorio](C:/wamp64/www/lab2laravel/imágenes/laravel (1))
+![Capturas de pantalla del laboratorio](C:/wamp64/www/lab2laravel/imágenes/laravel (1).jpeg)
 
-![Capturas de pantalla del laboratorio](C:/wamp64/www/lab2laravel/imágenes/laravel (2))
+![Capturas de pantalla del laboratorio](C:/wamp64/www/lab2laravel/imágenes/laravel (2)jpeg)
 
 ---
 
