@@ -1,61 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🧪 Laboratorio [Laboratorio 2 Laravel]
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 🎯 Objetivo del Laboratorio
 
-## About Laravel
+Este laboratorio tiene como **objetivo principal** identificar la estructura básica de un proyecto en Laravel, comprender la organización del framework bajo el patrón Modelo–Vista–Controlador (MVC) y reconocer la
+importancia de esta arquitectura en el desarrollo de aplicaciones web modernas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 💻 Arquitectura y Estructura (Patrón MVC)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel se basa en el patrón de arquitectura **Modelo-Vista-Controlador (MVC)**, que organiza el código en torno a tres componentes principales para mejorar la modularidad y el mantenimiento:
 
-## Learning Laravel
+| Carpeta | Componente MVC | Función Principal |
+| :--- | :--- | :--- |
+| `app/Models` | **Modelo** | Interactúa directamente con la base de datos (tablas). Define la lógica de negocio y las relaciones. |
+| `app/Http/Controllers` | **Controlador** | Actúa como intermediario. Recibe las peticiones del usuario (Rutas), llama a la lógica del Modelo y selecciona la Vista a mostrar. |
+| `resources/views` | **Vista** | Contiene el código de la interfaz de usuario (HTML/Blade). Es lo que el usuario final ve en el navegador. |
+| `routes/web.php` | **Rutas** | Define los puntos de acceso de la aplicación (URLs). Dirige las peticiones a los Controladores correspondientes. |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🛠️ Requisitos del Ecosistema
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Para ejecutar este laboratorio localmente, es necesario tener configurado el siguiente entorno de desarrollo.
 
-## Laravel Sponsors
+| Prerrequisito | Versión Requerida | Estado |
+| :--- | :--- | :--- |
+| **PHP** | 8.0 o superior | ✔️ |
+| **Composer** | Última versión estable | ✔️ |
+| **Instalador de Laravel** | (Instalado globalmente o proyecto creado con `composer create-project`) | ✔️ |
+| **Entorno de Servidor Web Local** | XAMPP, WampServer, Laragon, o similar | [Utilizé WampServer] |
+| **Servidor Web** | Apache o Nginx | [Utilizé Apache] |
+| **Base de Datos** | MySQL/MariaDB funcionando | ✔️ |
+| **Editor de Código** | Visual Studio Code o Sublime Text| [utilice Visual Studio Code] |
+| **Sistema Operativo** | [Windows 11] | |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Proceso de Instalación y Configuración
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+A continuación se documenta la secuencia de comandos utilizados para inicializar el proyecto, instalar dependencias y configurar la autenticación.
 
-## Contributing
+### 1. Inicialización y Dependencias
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Comando | Descripción |
+| :--- | :--- |
+| `composer install` | Instala todas las dependencias del proyecto definidas en `composer.json`. |
+| `cp .env.example .env` | Crea el archivo de configuración `.env` a partir de la plantilla. |
+| `php artisan key:generate` | Genera la clave de aplicación, esencial para la seguridad de Laravel. |
 
-## Code of Conduct
+### 2. Instalación del Paquete de Autenticación
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Para la funcionalidad de autenticación se utilizó el paquete **[Laravel/ui]**.
 
-## Security Vulnerabilities
+**Comandos utilizados para la Autenticación (Laravel/ui):**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install && npm run dev 
+# Este último paso compila los assets (CSS/JS) necesarios para que la autenticación se vea correctamente.
 
-## License
+## 📂 Migraciones y Base de Datos
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Configuración del entorno `.env`
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_base_de_datos
+DB_USERNAME=usuario
+DB_PASSWORD=contraseña
+```
+
+### Comandos utilizados para migraciones
+
+```bash
+php artisan migrate
+```
+
+### Respaldo de la base de datos
+
+Para generar un backup:
+
+```bash
+mysqldump -u usuario -p nombre_base_de_datos > database/backups/backup_lab2.sql
+```
+
+---
+
+## 🖼️ Resultado Visible
+
+![Capturas de pantalla del laboratorio](C:/wamp64/www/lab2laravel/imágenes/laravel (1))
+
+![Capturas de pantalla del laboratorio](C:/wamp64/www/lab2laravel/imágenes/laravel (2))
+
+---
+
+## ⚠️ Dificultades y Soluciones
+
+- **Error de migración:** Path no encontrado. Solución: borrar y volver a realizar la migración.
+- **Configuración del `.env`:** Error de conexión. Solución: Borrar la caché.
+- **Dependencias:** Problemas con Composer. Solución: Ejecutar `composer install` y actualizar.
+
+---
+
+## 📚 Referencias
+
+- [Documentación oficial de Laravel](https://laravel.com/docs/10.x)
+- [Tutorial instalación de Laravel](https://www.youtube.com/watch?v=GZMGyYNq3hE)
+- [Guía de Blade Templates](https://laravel.com/docs/10.x/blade)
+
+---
+
+## 📝 Footer
+
+> Este laboratorio ha sido desarrollado por el estudiante de la Universidad Tecnológica de Panamá:  
+> **Nombre:** Octavio Frauca  
+> **Correo:** octavio.frauca@utp.ac.pa  
+> **Curso:** Ingeniería Web  
+> **Instructor del Laboratorio:** Irina Fong.
+
+---
+
+## 📅 Fecha de Ejecución
+
+**Fecha:** 28 de septiembre de 2025
